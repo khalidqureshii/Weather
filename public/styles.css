@@ -31,15 +31,11 @@
     size:4rem;  
 }
 
-.bodyBackground{
+body{
     background-image: url("background1.jpg");
     size: cover;
 }
 
-.darkBodyBackground{
-    background-image: url("background2.jpg");
-    size: cover;
-}
 
 .container{
     background-color: rgb(204, 204, 204, 0.25);
