@@ -1,0 +1,79 @@
+.h2Header{
+    font-size: 4rem;
+    color:rgb(27, 27, 27);
+    margin: 1rem 0;
+}
+
+.submitButton{
+    border-radius:4rem;
+    font-size: 1.5rem;
+    padding:0.5rem;
+}
+
+.weatherIcon{
+    position:static;
+    width: 100%;
+}
+
+.formInput{
+    border-radius:2rem;
+    size:4rem;  
+}
+
+body{
+    background-image: url("background1.jpg");
+    size: cover;
+}
+
+.container{
+    background-color: rgb(51, 51, 51); 
+    background-color: rgb(204, 204, 204); 
+    margin: 4% 5%;
+    border-radius: 3rem;
+    padding: 5rem;
+    font-family: 'Montserrat', sans-serif;
+} 
+.containerBase{
+    background-color: rgb(51, 51, 51); 
+    background-color: rgb(204, 204, 204); 
+    margin-top: 10%;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3rem;
+    padding: 5rem;
+    max-width: 1000px;
+    min-width: 362px;    
+    font-family: 'Montserrat', sans-serif;
+}
+/*
+font-family: 'Anton', sans-serif;
+font-family: 'Bebas Neue', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Protest Strike', sans-serif;
+font-family: 'Teko', sans-serif;
+*/
+
+/* .FeelsLikeDisplay{
+
+} */
+
+.tempDisplay{
+    font-size: 5rem;
+}
+
+.superscript {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+.subscript {
+    vertical-align: sub;
+    font-size: 1.8rem;
+    margin-left:-1.65rem;
+}
+
+/* .descriptionColumn{
+    
+} */

@@ -1,0 +1,133 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Weather Forecast</title>
+      <link rel="icon" href="../public/favicon.ico">
+      <link rel="stylesheet" href ="styles.css">   
+      <link rel="stylesheet" href="main.css">    
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Josefin+Sans&family=Montserrat&family=Protest+Strike&family=Teko&display=swap" rel="stylesheet">
+  </head>
+  <body>
+      <% const roundingVariable = 1; %>
+
+      <% const currTemp = (tempData["temp"] - 273.15).toFixed(roundingVariable); %>
+      <% const feelsLike = (tempData["feels_like"] - 273.15).toFixed(roundingVariable); %>
+      <% const minTemp = (tempData["temp_min"] - 273.15).toFixed(roundingVariable); %>
+      <% const maxTemp = (tempData["temp_max"] - 273.15).toFixed(roundingVariable); %>
+      <% const wId = weatherData["id"]; %>
+      <% const wType = weatherData["main"]; %>
+      <% let wDesc= weatherData["description"]; %>
+      <% let words = wDesc.split(" "); %>
+      <% for (let i = 0 ; i<words.length; i++) { %>
+        <%  words[i] = words[i][0].toUpperCase() + words[i].substring(1); %>
+        <% } %>
+        <% const wDescription = words.join(" "); %>
+      <% const wIcon = weatherData["icon"]; %>
+      
+      <%const date = new Date();%>
+      <%const dayOfMonth = date.getDate();%>
+   
+      <%const daysOfWeek = ["Sunday", "Monday", "Tueday", "Wednesday", "Thursday", "Friday", "Saturday"];%>
+      <%const day = daysOfWeek[date.getDay()];%>
+   
+      <%const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];%>
+      <%const month = months[date.getMonth()];%> 
+      <%const formattedDate = `${day}, ${month} ${dayOfMonth}`;%>
+      <%const imageURL = `wIcons/${wIcon}.png`;%>
+      <br>
+      <br>
+      <br>
+
+      <!-- Design 1
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 container1">
+              <h2 class="h2Header"> <%= locationData %> Weather</h2>
+              <h1 class="h1Header">Temperature Data: </h1>
+              <h3> Temperature : <%= currTemp%> °C</h3>
+              <h3> Feels Like :  <%= feelsLike%> °C </h3>
+              <h3> Minimum Temperature :  <%= minTemp%> °C</h3>
+              <h3> Maximum Temperature : <%= maxTemp %> °C</h3>
+              <br>
+              <br>
+              <br>
+              <h1 class="h1Header">Weather Data: </h1>
+              <h3>Weather Type: <%= wType%></h3>
+              <h3>Weather Description: <%= wDescription%></h3>
+            </div>
+            <div class="col-lg-6 container2">
+
+              <img src = "<%= imageURL%>" class = "weatherIcon" alt = "Error 404: Image Not Found">
+            </div> 
+          </div>
+        </div> -->
+
+        <!--Design2
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3">
+              <img src = "<%= imageURL%>" class = "weatherIcon" alt = "Error 404: Image Not Found">
+            </div>
+            <div class = "col-lg-9">
+              <h2 class="h2Header"> <%= locationData %>, <%= stateData%>.</h2>
+              <h3> <%=formattedDate %> </h3>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "col-lg-6">
+              <h1 class="h1Header">Temperature Data: </h1>
+              <h3> Temperature : <%= currTemp%> °C</h3>
+              <h3> Feels Like :  <%= feelsLike%> °C </h3>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class = "col-lg-6">
+              <h1 class="h1Header">Weather Data: </h1>
+              <h3>Weather Type: <%= wType%></h3>
+              <h3>Weather Description: <%= wDescription%></h3>
+            </div>
+            
+          </div>
+        </div> -->
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2 text-center align-self-center">
+              <img src = "<%= imageURL%>" class = "weatherIcon" alt = "Error 404: Image Not Found">
+              <br>
+              <br>
+            </div>
+
+            <div class="col-lg-3 align-self-center text-center">
+              <br>
+              <h3 class="tempDisplay"><%= currTemp %>°<span class="subscript">C</span></h3>
+              <h4 class=""> Feels Like <%= feelsLike%> °C </h4>
+            </div>
+            
+            <div class = "col-lg-7 align-self-center text-center  ">
+              <% if (locationData.length + stateData.length <= 15) { %>
+              <h2 class="h2Header"> <%= locationData %>, <%= stateData%></h2>
+              <% } else {%>
+                <h2 class="h2Header"> <%= locationData %></h2>
+              <% } %>
+              <h3> <%=formattedDate %> </h3>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-2 text-center">
+              <h2><%= wDescription%></h2>
+            </div>
+          </div>
+        </div> 
+
+      <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+  </html>

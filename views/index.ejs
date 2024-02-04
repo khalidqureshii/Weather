@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Weather Forecast</title>
+      <link rel="icon" href="../public/favicon.ico">
+      <link rel="stylesheet" href ="styles.css">   
+      <link rel="stylesheet" href="main.css">    
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Josefin+Sans&family=Montserrat&family=Protest+Strike&family=Teko&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class = "containerBase">
+        <div class="row">
+            <h1>
+                <%= locals.message? message: "" %>
+            </h1>
+        </div>
+
+        <form action = "/" method="post">
+            <div class = "row">
+                <div class = "col-lg-4 col-sm-6 text-center">
+                    <br>
+                    <label for="location"><h2>Enter Location: </h2></label>
+                    <br>
+                    <input type="text" class= "formInput" id="location" name="location_name" required>
+                    
+                </div>
+                <div class = "col-lg-4 col-sm-6 text-center">
+                    <br>
+                    <label for="state"><h2>Enter State:</h2></label>
+                    <br>
+                    <input type="text" class= "formInput" id="state" name="state_name">
+                </div>
+                <div class = "col-lg-4 col-sm-6 text-center">
+                    <br>
+                    <label for="country"><h2>Enter Country: </h2></label>
+                    <br>
+                    <input type="text" class= "formInput" id="country" name="country_name">
+                </div>
+                <div class="col-lg-12 col-sm-6 text-center">
+                    <br><br>
+                    <input type="submit" value="Submit" class="submitButton">
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</body>
+</html>
