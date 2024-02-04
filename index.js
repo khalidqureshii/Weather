@@ -6,13 +6,11 @@ const port = 3000;
 const app = express();
 const apiKEY = "92cc417906aaf9a168cf8c848d2c50ad";
 const ninjaKEY = "+MOUaMj7ythhk67PnpepGg==h9QaPCw4FFugn7VK";
-let darkMode = false;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"))
 
 const baseURL = "https://api.openweathermap.org/data/2.5/weather?";
-//const baseURL = "https://api.openweathermap.org/data/2.5/forecast?";
 
 app.get("/", async (req,res) => {
     res.render("index.ejs");
@@ -73,7 +71,6 @@ app.post("/", async(req,res)=>{
         res.render("index.ejs", {message: "Error: Invalid Location entered"});
         return;
     }
-    //console.log(result.data);
     const lat = final[0]["latitude"];
     const lon = final[0]["longitude"];
     const result2 = await axios.post(baseURL + `lat=${lat}&lon=${lon}&appid=${apiKEY}`);
