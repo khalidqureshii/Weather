@@ -5,9 +5,12 @@
 }
 
 .submitButton{
-    border-radius:4rem;
-    font-size: 1.5rem;
-    padding:0.5rem;
+    border-radius:4rem !important; 
+    font-size: 1.25rem !important;
+    padding: 0.75rem !important;
+    background-color: rgb(194, 138, 138) !important;
+    border-color: rgb(185, 157, 157) !important;
+    box-shadow: 0.25rem 0.25rem 0.2rem rgb(134, 134, 134, 0.8);
 }
 
 @media (max-width: 991px) {
@@ -35,7 +38,6 @@ body{
     background-image: url("background1.jpg");
     size: cover;
 }
-
 
 .container{
     background-color: rgb(204, 204, 204, 0.25);
@@ -74,3 +76,4 @@ body{
     font-size: 1.8rem;
     margin-left:-1.65rem;
 }
+
