@@ -10,9 +10,20 @@
     padding:0.5rem;
 }
 
-.weatherIcon{
-    position:static;
-    width: 100%;
+@media (max-width: 991px) {
+    .weatherIcon{
+        position:static;
+        width: 40vw;
+        max-width: 250px;
+    }
+}
+
+@media (min-width: 992px) {
+    .weatherIcon{
+        position:static;
+        width: 10vw;
+        min-width: 150px;
+    }
 }
 
 .formInput{
