@@ -31,22 +31,28 @@
     size:4rem;  
 }
 
-body{
+.bodyBackground{
     background-image: url("background1.jpg");
     size: cover;
 }
 
+.darkBodyBackground{
+    background-image: url("background2.jpg");
+    size: cover;
+}
+
 .container{
-    background-color: rgb(51, 51, 51); 
-    background-color: rgb(204, 204, 204); 
+    background-color: rgb(204, 204, 204, 0.25);
+    box-shadow: 0.35rem 0.35rem 0.75rem  rgb(0,0,0,0.5);
     margin: 4% 5%;
     border-radius: 3rem;
     padding: 5rem;
     font-family: 'Montserrat', sans-serif;
 } 
+
 .containerBase{
-    background-color: rgb(51, 51, 51); 
-    background-color: rgb(204, 204, 204); 
+    background-color: rgb(204, 204, 204, 0.25);
+    box-shadow: 0.35rem 0.35rem 0.75rem  rgb(0,0,0,0.5);
     margin-top: 10%;
     margin-bottom: auto;
     margin-left: auto;
@@ -57,6 +63,7 @@ body{
     min-width: 362px;    
     font-family: 'Montserrat', sans-serif;
 }
+
 .tempDisplay{
     font-size: 5rem;
 }
