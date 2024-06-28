@@ -4,8 +4,8 @@ import express from "express"
 
 const port = 3000;
 const app = express();
-const apiKEY = "92cc417906aaf9a168cf8c848d2c50ad";
-const ninjaKEY = "+MOUaMj7ythhk67PnpepGg==h9QaPCw4FFugn7VK";
+const apiKEY = process.env.API_KEY;
+const ninjaKEY = process.env.NINJA_KEY;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"))
@@ -46,6 +46,7 @@ app.post("/", async(req,res)=>{
     const result = await axios.get(base, {headers: {'X-Api-Key':ninjaKEY}});
     
     let final = result.data;
+    console.log(final);
     if (final.length > 1){
         let temp = [];
         if (stateFlag) {
